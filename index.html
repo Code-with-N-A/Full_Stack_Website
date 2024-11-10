@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code_with_N.A</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar nav {
+            margin-left: auto;
+        }
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+        }
+        .navbar nav ul li {
+            margin-left: 20px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar .cta {
+            background: #ff5733;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 20px;
+            background: #f7f7f7;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .hero-content .subtitle {
+            color: #ff5733;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+        .hero-content .description {
+            font-size: 1rem;
+            margin: 10px 0 20px;
+            color: #666;
+        }
+        .buttons .btn {
+            background: #ff5733;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 50%;
+        }
+
+        /* Info Section */
+        .info-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #fff;
+            flex-wrap: wrap;
+        }
+        .info-section .info {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .navbar nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar nav ul li {
+                margin: 10px 0;
+            }
+            .navbar .cta {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .hero-image img {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-content h1 {
+                font-size: 1.3rem;
+            }
+            .hero-image img {
+                width: 100%;
+            }
+            .navbar .cta {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 1.2rem;
+            }
+            .hero-content .description {
+                font-size: 0.9rem;
+            }
+            .navbar nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="navbar">
+            <div class="logo"><h5 id="textChange">Old Text</h5></div>
+            <script>
+                // Get the new text from localStorage
+                var newText = localStorage.getItem("newText");
+        
+                // If there is new text, change the content
+                if (newText) {
+                    document.getElementById("textChange").textContent = newText;
+                }
+            </script>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="servies.html">Services</a></li>
+                    <li><a href="contect.html">Contect</a></li>
+                </ul>
+            </nav>
+            <a href="FreeConsultation.html" class="cta">Get free Consultation</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="subtitle">Get every single contact</p>
+            <h1 id="homemen">I am a web developer</h1>
+            <script>
+                // Get the new text from localStorage
+                var newText = localStorage.getItem("hed");
+        
+                // If there is new text, change the content
+                if (newText) {
+                    document.getElementById("homemen").textContent = newText;
+                }
+            </script>
+
+
+            <p class="description"id="Homep">I create responsive, modern websites that adapt to every screen size.</p>
+            <script>
+                // Get the new text from localStorage
+                var newText = localStorage.getItem("homet");
+        
+                // If there is new text, change the content
+                if (newText) {
+                    document.getElementById("Homep").textContent = newText;
+                }
+            </script>
+           
+            <div class="buttons">
+                <a href="lern.html" class="btn learn-more">Learn more</a>
+                <a href="hire.html" class="btn hire-me">Hire me</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img id="displayImage" alt="Uploaded Image" />
+
+
+    <!-- Image element to display the uploaded image -->
+    
+
+    <script>
+        // Get the image URL from localStorage
+        var savedImageUrl = localStorage.getItem('uploadedImage');
+
+        if (savedImageUrl) {
+            // Display the image in the img tag
+            document.getElementById('displayImage').src = savedImageUrl;
+        } else {
+            // If no image is found, show an alert
+            alert("No image found. Please upload an image first.");
+            window.location.href = "i";
+        }
+    </script>
+
+
+            
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info">
+            <h3>Design with passion while exploring the world.</h3>
+        </div>
+        <div class="info">
+            <h3>Any type of Query & Discussion.</h3>
+        </div>
+    </section>
+
+</body>
+</html>

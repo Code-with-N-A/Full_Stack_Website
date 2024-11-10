@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Nitesh Amule</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Profile Card Styles */
+        .profile-card {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .profile-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .profile-details {
+            flex: 1;
+        }
+        .profile-details h2 {
+            font-size: 28px;
+            color: #333;
+            margin: 0;
+        }
+        .profile-details p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-card img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Me - Nitesh Amule</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="profile-card">
+                <img id="profile-img" src="https://via.placeholder.com/400" alt="Profile Image">
+                <div class="profile-details">
+                    <h2 id="profile-name">Nitesh Amule</h2>
+                    <p id="profile-description">Hello! My name is Nitesh Amule. I am a Full Stack Website Developer from MP, Balaghat...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nitesh Amule. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load saved data from localStorage (if exists)
+        window.onload = function() {
+            const savedImg = localStorage.getItem('profileImg');
+            const savedName = localStorage.getItem('profileName');
+            const savedDescription = localStorage.getItem('profileDescription');
+
+            if (savedImg) {
+                document.getElementById('profile-img').src = savedImg;
+            }
+            if (savedName) {
+                document.getElementById('profile-name').textContent = savedName;
+            }
+            if (savedDescription) {
+                document.getElementById('profile-description').textContent = savedDescription;
+            }
+        }
+    </script>
+
+</body>
+</html>

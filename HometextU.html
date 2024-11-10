@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Card Design</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Container for cards */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      /* Card styling */
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Input and buttons in the cards */
+      .card input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .card button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .card button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      h1 {
+        text-align: center;
+        color: #0056b3;
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Card 1: Change Logo Text -->
+      <div class="card">
+        <h2>Change Text in Website Logo Home</h2>
+        <label for="inputText">Enter new text:</label>
+        <input type="text" id="inputText" />
+        <button onclick="Ano()">Change Text</button>
+      </div>
+
+      <!-- Card 2: Change Main Heading Text -->
+      <div class="card">
+        <h2>Change Home Page Main Heading</h2>
+        <label for="meanh">Enter new text:</label>
+        <input type="text" id="meanh" />
+        <button onclick="menheding()">Change Heading</button>
+      </div>
+
+      <!-- Card 3: Change Home Page Text -->
+      <div class="card">
+        <h2>Change Home Page Text</h2>
+        <label for="homeText">Enter new text:</label>
+        <input type="text" id="homeText" />
+        <button onclick="changeTextInAnotherFile()">Change Text</button>
+      </div>
+
+      <!-- Card 4: Upload Image -->
+      <div class="card">
+        <h2>Upload and Change Home Page Image</h2>
+        <label for="imgFile">Choose an image:</label>
+        <input type="file" id="imgFile" accept="image/*" />
+        <button onclick="uploadImage()">Upload Image</button>
+      </div>
+
+      <div class="card">
+        <h1>About pag start</h1>
+      </div>
+
+      <div class="card">
+        <h2>Change Text in Website About man heding</h2>
+        <label for="inputText">Enter new text:</label>
+        <input type="text" id="abttext" />
+        <button onclick="abt()">Change Text</button>
+      </div>
+
+      <div class="card">
+        <h2>Change Text in Website About discription 1</h2>
+        <label for="inputText">Enter new text:</label>
+        <input type="text" id="dis" />
+        <button onclick="diss()">Change Text</button>
+      </div>
+
+      <div class="card">
+        <h2>Change Text in Website About discription 2</h2>
+        <label for="inputText">Enter new text:</label>
+        <input type="text" id="dis2" />
+        <button onclick="diss2()">Change Text</button>
+      </div>
+
+      <!-- Card : Upload Image About pag man img -->
+      <div class="card">
+        <h2>Upload and Change About man Page Image</h2>
+        <label for="imgFile">Choose an image:</label>
+        <input type="file" id="Abo" accept="image/*" />
+        <button onclick="about()">Upload Image</button>
+      </div>
+
+      <!-- Card 1: Upload Image About pag tim 1 img -->
+      <div class="card">
+        <h2>Upload and Change About man Page Image</h2>
+        <label for="imgFile">Choose an image:</label>
+        <input type="file" id="fr1" accept="image/*" />
+        <button onclick="tim1()">Upload Image</button>
+      </div>
+
+      <!-- Card 2: Upload Image About pag tim 2 img -->
+      <div class="card">
+        <h2>Upload and Change About man Page Image</h2>
+        <label for="imgFile">Choose an image:</label>
+        <input type="file" id="fr2" accept="image/*" />
+        <button onclick="tim2()">Upload Image</button>
+      </div>
+
+      <!-- Card 3: Upload Image About pag tim 3 img -->
+      <div class="card">
+        <h2>Upload and Change About man Page Image</h2>
+        <label for="imgFile">Choose an image:</label>
+        <input type="file" id="fr3" accept="image/*" />
+        <button onclick="tim3()">Upload Image</button>
+      </div>
+
+      <!-- Card 1: Upload tim 1 nameAbout pag tim 1 name -->
+      <div class="card">
+        <h2>Upload and Change About man Tim 1 Name</h2>
+        <label for="inputText">Choose an image:</label>
+        <input type="text" id="tm1" />
+        <button onclick="tmt1()">Upload Text</button>
+      </div>
+
+      <!-- Card: Upload PDF File -->
+      <!-- Card: Upload PDF File -->
+      <div class="card">
+        <h2>Upload PDF Document 1</h2>
+        <label for="pdfFile">Choose a PDF file 1:</label>
+        <input type="file" id="pdfFile" accept="application/pdf" />
+        <button onclick="uploadPDF()">Upload PDF</button>
+      </div>
+
+      <script>
+        function uploadPDF() {
+          var fileInput = document.getElementById("pdfFile");
+          var file = fileInput.files[0];
+
+          if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              var pdfUrl = e.target.result;
+
+              // Store the PDF (base64 URL) in localStorage
+              localStorage.setItem("pdf", pdfUrl);
+
+              // Redirect to view-pdf.html to display the uploaded PDF
+              window.location.href = "About.html";
+            };
+
+            reader.readAsDataURL(file);
+          } else {
+            alert("Please select a PDF file.");
+          }
+        }
+      </script>
+
+      <!-- Card 2: Upload tim 2 nameAbout pag tim 2 name -->
+      <div class="card">
+        <h2>Upload and Change About man Tim 2 Name</h2>
+        <label for="inputText">Choose an image:</label>
+        <input type="text" id="tm2" />
+        <button onclick="tmt2()">Upload Text</button>
+      </div>
+
+      <div class="card">
+        <h2>Upload PDF Document 2</h2>
+        <label for="pdfFile">Choose a PDF file 2:</label>
+        <input type="file" id="pdfFile2" accept="application/pdf" />
+        <button onclick="uploadPDF2()">Upload PDF</button>
+      </div>
+
+      <script>
+        function uploadPDF2() {
+          var fileInput = document.getElementById("pdfFile2");
+          var file = fileInput.files[0];
+
+          if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              var pdfUrl = e.target.result;
+
+              // Store the PDF (base64 URL) in localStorage
+              localStorage.setItem("pdf2", pdfUrl);
+
+              // Redirect to view-pdf.html to display the uploaded PDF
+              window.location.href = "About.html";
+            };
+
+            reader.readAsDataURL(file);
+          } else {
+            alert("Please select a PDF file 2.");
+          }
+        }
+      </script>
+
+      <!-- Card 3: Upload tim 3 nameAbout pag tim 3 name -->
+      <div class="card">
+        <h2>Upload and Change About man Tim 3 Name</h2>
+        <label for="inputText">Choose an image:</label>
+        <input type="text" id="tm3" />
+        <button onclick="tmt3()">Upload Text</button>
+      </div>
+    
+
+
+
+    <div class="card">
+        <h2>Upload PDF Document 3</h2>
+        <label for="pdfFile">Choose a PDF file 3:</label>
+        <input type="file" id="pdfFile3" accept="application/pdf" />
+        <button onclick="uploadPDF3()">Upload PDF</button>
+      </div>
+</div>
+      <script>
+        function uploadPDF3() {
+          var fileInput = document.getElementById("pdfFile3");
+          var file = fileInput.files[0];
+
+          if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              var pdfUrl = e.target.result;
+
+              // Store the PDF (base64 URL) in localStorage
+              localStorage.setItem("pdf3", pdfUrl);
+
+              // Redirect to view-pdf.html to display the uploaded PDF
+              window.location.href = "About.html";
+            };
+
+            reader.readAsDataURL(file);
+          } else {
+            alert("Please select a PDF file 3.");
+          }
+        }
+      </script>
+
+    <script>
+      // Function to change logo text
+      function Ano() {
+        var inputValue = document.getElementById("inputText").value;
+        localStorage.setItem("newText", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "index.html";
+      }
+
+      // Function to change main heading
+      function menheding() {
+        var man = document.getElementById("meanh").value;
+        localStorage.setItem("hed", man);
+        alert("Change Text in Home Website Main Heading");
+        window.location.href = "index.html";
+      }
+
+      // Function to change home page text
+      function changeTextInAnotherFile() {
+        var inputValue = document.getElementById("homeText").value;
+        localStorage.setItem("homet", inputValue);
+        alert("Change Text on Home Page");
+        window.location.href = "index.html";
+      }
+
+      // Function to upload and change home page image
+      function uploadImage() {
+        var fileInput = document.getElementById("imgFile");
+        var file = fileInput.files[0];
+
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imageUrl = e.target.result;
+
+            // Store the image (base64 URL) in localStorage
+            localStorage.setItem("uploadedImage", imageUrl);
+
+            // Redirect to index.html to view the uploaded image
+            window.location.href = "index.html";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select an image file.");
+        }
+      }
+    </script>
+
+    <script>
+      // about page start man heding
+      function abt() {
+        var inputValue = document.getElementById("abttext").value;
+        localStorage.setItem("About", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "About.html";
+      }
+    </script>
+
+    <script>
+      // about page start discription 1
+      function diss() {
+        var inputValue = document.getElementById("dis").value;
+        localStorage.setItem("mayd", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "About.html";
+      }
+    </script>
+
+    <script>
+      // about page start discription 2
+      function diss2() {
+        var inputValue = document.getElementById("dis2").value;
+        localStorage.setItem("mayd2", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "About.html";
+      }
+    </script>
+
+    <script>
+      // Function to upload and change about man  page image
+      function about() {
+        var fileInput = document.getElementById("Abo");
+        var file = fileInput.files[0];
+
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imageUrl = e.target.result;
+
+            // Store the image (base64 URL) in localStorage
+            localStorage.setItem("may", imageUrl);
+
+            // Redirect to index.html to view the uploaded image
+            window.location.href = "About.html";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select an image file.");
+        }
+      }
+    </script>
+
+    <script>
+      // Function to upload and change about man  page image tim 1
+      function tim1() {
+        var fileInput = document.getElementById("fr1");
+        var file = fileInput.files[0];
+
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imageUrl = e.target.result;
+
+            // Store the image (base64 URL) in localStorage
+            localStorage.setItem("tim1", imageUrl);
+
+            // Redirect to index.html to view the uploaded image
+            window.location.href = "About.html";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select an image file.");
+        }
+      }
+    </script>
+
+    <script>
+      // car name chench start
+    </script>
+
+    <script>
+      // about page start timname 1
+      function tmt1() {
+        var inputValue = document.getElementById("tm1").value;
+        localStorage.setItem("tim1t1", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "About.html";
+      }
+    </script>
+
+    <script>
+      // about page start timname 2
+      function tmt2() {
+        var inputValue = document.getElementById("tm2").value;
+        localStorage.setItem("tim1t2", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "About.html";
+      }
+    </script>
+
+    <script>
+      // about page start timname 3
+      function tmt3() {
+        var inputValue = document.getElementById("tm3").value;
+        localStorage.setItem("tim1t3", inputValue);
+        alert("Change Text in Website Logo Name");
+        window.location.href = "About.html";
+      }
+    </script>
+
+    <script>
+      //card name cheng of
+    </script>
+
+    <script>
+      // Function to upload and change about man  page image tim 2
+      function tim2() {
+        var fileInput = document.getElementById("fr2");
+        var file = fileInput.files[0];
+
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imageUrl = e.target.result;
+
+            // Store the image (base64 URL) in localStorage
+            localStorage.setItem("tim2", imageUrl);
+
+            // Redirect to index.html to view the uploaded image
+            window.location.href = "About.html";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select an image file.");
+        }
+      }
+    </script>
+
+    <script>
+      // Function to upload and change about man  page image tim 3
+      function tim3() {
+        var fileInput = document.getElementById("fr3");
+        var file = fileInput.files[0];
+
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imageUrl = e.target.result;
+
+            // Store the image (base64 URL) in localStorage
+            localStorage.setItem("tim3", imageUrl);
+
+            // Redirect to index.html to view the uploaded image
+            window.location.href = "About.html";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select an image file.");
+        }
+      }
+    </script>
+  </body>
+</html>

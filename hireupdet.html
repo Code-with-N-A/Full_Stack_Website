@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            button {
+                font-size: 1em;
+            }
+        }
+
+        /* Add margins for individual fields */
+        .input-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hire Profile Update</h1>
+    <div class="container">
+        <div class="input-group">
+            <label for="new-img1">Profile Image 1:</label>
+            <input type="file" id="new-img1" accept="image/*">
+        </div>
+
+        <div class="input-group">
+            <label for="new-img2">Profile Image 2:</label>
+            <input type="file" id="new-img2" accept="image/*">
+        </div>
+
+        <div class="input-group">
+            <label for="new-img3">Profile Image 3:</label>
+            <input type="file" id="new-img3" accept="image/*">
+        </div>
+
+        <div class="input-group">
+            <label for="new-description1">Description 1:</label>
+            <textarea id="new-description1" placeholder="Enter Description"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="new-description2">Description 2:</label>
+            <textarea id="new-description2" placeholder="Enter Description"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="new-description3">Description 3:</label>
+            <textarea id="new-description3" placeholder="Enter Description"></textarea>
+        </div>
+
+        <button onclick="updatehire()">Save Changes</button>
+    </div>
+
+    <script>
+        function updatehire() {
+            const newImg1 = document.getElementById('new-img1').files[0];
+            const newImg2 = document.getElementById('new-img2').files[0];
+            const newImg3 = document.getElementById('new-img3').files[0];
+
+            const newDescription1 = document.getElementById('new-description1').value;
+            const newDescription2 = document.getElementById('new-description2').value;
+            const newDescription3 = document.getElementById('new-description3').value;
+
+            // Check if a file is selected
+            if (newImg1) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Store the image data as base64 string in localStorage
+                    localStorage.setItem('profileImg1', e.target.result);
+                };
+                reader.readAsDataURL(newImg1); // Convert file to base64
+            }
+            if (newImg2) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Store the image data as base64 string in localStorage
+                    localStorage.setItem('profileImg2', e.target.result);
+                };
+                reader.readAsDataURL(newImg2); // Convert file to base64
+            }
+            if (newImg3) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Store the image data as base64 string in localStorage
+                    localStorage.setItem('profileImg3', e.target.result);
+                };
+                reader.readAsDataURL(newImg3); // Convert file to base64
+            }
+
+            localStorage.setItem('profileDescription1', newDescription1);
+            localStorage.setItem('profileDescription2', newDescription2);
+            localStorage.setItem('profileDescription3', newDescription3);
+
+            // Redirect to profile page
+            window.location.href = 'hire.html';
+        }
+    </script>
+</body>
+</html>

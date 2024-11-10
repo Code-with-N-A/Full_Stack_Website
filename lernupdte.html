@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile - Nitesh Amule</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #333;
+            color: white;
+        }
+        header h1 {
+            font-size: 36px;
+        }
+        .update-form {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .update-form input, .update-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .update-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .update-form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Update Profile - Nitesh Amule</h1>
+    </header>
+
+    <div class="container">
+        <div class="update-form">
+            <h3>Update Your Profile Information</h3>
+            <!-- Add file input for profile image -->
+            <label for="new-img">Profile Image:</label><br>
+            <input type="file" id="new-img" accept="image/*"><br><br>
+
+            <label for="new-name">Name:</label><br>
+            <input type="text" id="new-name" placeholder="Enter Name"><br><br>
+
+            <label for="new-description">Description:</label><br>
+            <textarea id="new-description" placeholder="Enter Description"></textarea><br><br>
+
+            <button onclick="updateProfile()">Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        // Update Profile in localStorage
+        function updateProfile() {
+            const newImg = document.getElementById('new-img').files[0]; // Get selected file
+            const newName = document.getElementById('new-name').value;
+            const newDescription = document.getElementById('new-description').value;
+
+            // Check if a file is selected
+            if (newImg) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Store the image data as base64 string in localStorage
+                    localStorage.setItem('profileImg', e.target.result);
+                };
+                reader.readAsDataURL(newImg); // Convert file to base64
+            }
+
+            // Store other profile data in localStorage
+            localStorage.setItem('profileName', newName);
+            localStorage.setItem('profileDescription', newDescription);
+
+            // Redirect to profile page
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
