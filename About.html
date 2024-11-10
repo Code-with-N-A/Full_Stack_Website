@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Code_with_N.A</title>
+    <style>
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f4f4f4;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* About Section */
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .about-text {
+        flex: 1;
+        padding: 20px;
+        text-align: justify;
+      }
+
+      .about-text h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .about-text .cta {
+        background: #ff5733;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .about-image {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .about-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 50%;
+      }
+
+      /* Team Section */
+      .team-section {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .team-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .team {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .team-member {
+        background: #fff;
+        border-radius: 10px;
+        margin: 20px;
+        padding: 20px;
+        max-width: 250px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-member img {
+        width: 100%;
+        max-width: 150px;
+        border-radius: 50%;
+        
+      }
+
+      .team-member h3 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        color: black;
+        font-style: unset;
+      }
+
+      .team-member p {
+        font-size: 1rem;
+        color: black;
+      }
+      .team-member button {
+        color: whitesmoke;
+        background-color:black;
+        border: 2px solid rgb(213, 47, 255);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      
+        border-radius: 12px;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 992px) {
+        .about {
+          flex-direction: column;
+        }
+
+        .about-text h2 {
+          font-size: 2rem;
+        }
+
+        .team-member {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .about-text h2 {
+          font-size: 1.8rem;
+        }
+
+        .team-member h3 {
+          font-size: 1.2rem;
+        }
+
+        .team-member img {
+          width: 100px;
+        }
+      }
+      div.about-text h1 {
+        font: optional;
+        font-size: 1.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>About Us</h1>
+    </header>
+
+    <section class="container about">
+      <div class="about-text">
+        <h1 id="topheding" >man heding</h1>
+
+        <p id="fist_p">At<strong>Code_with_N.A</strong> text</p>
+        <p id="second_p">text</p>
+        <a href="lernMore.html" class="cta">Learn More About Our Services</a>
+      </div>
+
+      <div class="about-image">
+        <img id="Aboutimg" alt="Uploaded Image" />
+      </div>
+    </section>
+
+    <section class="container team-section">
+      <h2>Meet Our Team</h2>
+
+      <div class="team">
+        <div class="team-member">
+          <img id="img1" alt="Uploaded Image" />
+          <h3 id="text1">Naveen</h3>
+          <p>Lead Developer</p>
+          <button onclick="openPDF('pdf')">Open Resume</button>
+        </div>
+
+        <div class="team-member">
+          <img id="img2" alt="Uploaded Image" />
+          <h3 id="text2">Naveen</h3>
+          <p>Lead Developer</p>
+          <button onclick="openPDF('pdf2')">pen Resume</button>
+        </div>
+
+        <div class="team-member">
+          <img id="img3" alt="Uploaded Image" />
+          <h3 id="text3">Naveen</h3>
+          <p>Lead Developer</p>
+          <button onclick="openPDF('pdf3')">pen Resume</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Function to load and display text from localStorage
+      function loadText(id, localStorageKey) {
+        var newText = localStorage.getItem(localStorageKey);
+        if (newText) {
+          document.getElementById(id).textContent = newText;
+        }
+      }
+
+      // Function to load and display images from localStorage
+      function loadImage(id, localStorageKey) {
+        var savedImageUrl = localStorage.getItem(localStorageKey);
+        if (savedImageUrl) {
+          document.getElementById(id).src = savedImageUrl;
+        } else {
+          alert("No image found. Please upload an image first.");
+          window.location.href = "About.html";
+        }
+      }
+
+      // Function to open PDFs from localStorage
+      function openPDF(pdfKey) {
+        var savedPdfUrl = localStorage.getItem(pdfKey);
+        if (savedPdfUrl) {
+          window.open(savedPdfUrl, "_blank");
+        } else {
+          alert("No PDF found. Please upload a PDF first.");
+          window.location.href = "About.html";
+          
+        }
+      }
+
+      // Loading texts
+      loadText("topheding", "About");
+      loadText("fist_p", "mayd");
+      loadText("second_p", "mayd2");
+      loadText("text1", "tim1t1");
+      loadText("text2", "tim1t2");
+      loadText("text3", "tim1t3");
+
+      // Loading images
+      loadImage("Aboutimg", "may");
+      loadImage("img1", "tim1");
+      loadImage("img2", "tim2");
+      loadImage("img3", "tim3");
+    </script>
+  </body>
+</html>
